@@ -1,17 +1,8 @@
 import React from "react";
+import Landing from "./pages/Landing";
+
 function App() {
-  return (
-    <div
-      style={{
-        color: "white",
-        fontSize: "40px",
-        textAlign: "center",
-        marginTop: "100px",
-      }}
-    >
-      NetflixX Frontend Working 🚀
-    </div>
-  );
+  return <Landing />;
 }
 
 export default App;

@@ -1,21 +1,15 @@
-import { Link } from "react-router-dom";
+import React from "react";
 
-export default function Navbar() {
+function Navbar() {
   return (
-    <nav className="flex justify-between px-6 py-4 bg-black/70 fixed w-full">
-      <h1 className="text-red-600 font-bold text-3xl">StreamFlix</h1>
+    <nav className="navbar">
+      <h1 className="logo">NETFLIX</h1>
 
-      <div className="space-x-4">
-        <Link to="/browse">Home</Link>
-        <button
-          onClick={() => {
-            localStorage.removeItem("token");
-            window.location.href = "/";
-          }}
-        >
-          Logout
-        </button>
-      </div>
+      <button className="signin-btn">
+        Sign In
+      </button>
     </nav>
   );
 }
+
+export default Navbar;
