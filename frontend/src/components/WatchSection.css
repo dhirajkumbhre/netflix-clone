@@ -1,0 +1,132 @@
+/* ==========================================================
+   WATCH SECTION
+   ==========================================================
+
+   This is the 3rd Netflix landing page section.
+
+   Layout
+   ------------------------------
+   |  Text           |  Devices  |
+   ------------------------------
+
+   Later we'll place a Netflix video
+   inside the TV screen.
+========================================================== */
+
+
+/* Entire section */
+
+.watch-section{
+
+    /* Makes this section tall enough */
+    padding:70px 12%;
+
+    /* Places text and image side-by-side */
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    /* Left/Right spacing */
+
+    /* Netflix black background */
+    background:#000;
+
+    color:white;
+
+    /* Grey separator line */
+    border-top:8px solid #232323;
+}
+
+
+/* ==========================================================
+   LEFT SIDE (TEXT)
+========================================================== */
+
+.watch-text{
+
+    /* Takes half the available width */
+    flex:1;
+}
+
+
+/* Main heading */
+
+.watch-text h2{
+
+    font-size:3.4rem;
+
+    font-weight:900;
+
+    margin-bottom:20px;
+}
+
+
+/* Description */
+
+.watch-text p{
+
+    font-size:1.6rem;
+
+    line-height:1.5;
+
+    max-width:540px;
+}
+
+
+/* ==========================================================
+   RIGHT SIDE (IMAGE)
+========================================================== */
+
+.watch-image{
+
+    /* Takes remaining width */
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    position:relative;
+
+    /* Needed later for the video animation */
+}
+
+
+/* Device image */
+
+.watch-image img{
+
+    width:100%;
+
+    max-width:560px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* ==========================================================
+   FUTURE UPGRADE
+   ==========================================================
+
+   Later we will place the Netflix video
+   inside the TV screen.
+
+.watch-image video{
+
+    position:absolute;
+
+    top:10%;
+
+    left:19%;
+
+    width:62%;
+
+    z-index:1;
+
+}
+
+========================================================== */

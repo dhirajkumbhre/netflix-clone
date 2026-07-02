@@ -1,0 +1,163 @@
+/* =======================================================
+   DOWNLOAD SECTION
+======================================================= */
+
+.download-section{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    min-height:80vh;
+
+    padding:80px 12%;
+
+    background:#000;
+
+    color:white;
+
+    border-top:8px solid #232323;
+}
+
+
+/* =======================================================
+   PHONE IMAGE CONTAINER
+
+   IMPORTANT
+
+   We use
+
+   position:relative;
+
+   because the download card will be positioned
+   relative to THIS container.
+
+======================================================= */
+
+.download-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    position:relative;
+}
+
+
+/* Phone */
+
+.download-image img{
+
+    width:100%;
+
+    max-width:550px;
+}
+
+
+/* =======================================================
+   DOWNLOAD CARD
+
+   This card floats above the phone.
+
+======================================================= */
+
+.download-card{
+
+    position:absolute;
+
+    bottom:30px;
+
+    background:#000;
+
+    border:2px solid #555;
+
+    border-radius:15px;
+
+    width:60%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:15px;
+
+    box-shadow:0 0 25px rgba(0,0,0,.7);
+}
+
+
+/* Small poster */
+
+.boxshot{
+
+    width:55px !important;
+
+    border-radius:4px;
+}
+
+
+/* Text */
+
+.download-info{
+
+    flex:1;
+
+    margin-left:15px;
+}
+
+
+.download-info h4{
+
+    margin:0;
+
+    font-size:1rem;
+}
+
+
+.download-info span{
+
+    color:#0071eb;
+
+    font-size:.9rem;
+}
+
+
+/* Download icon */
+
+.download-icon{
+
+    font-size:2rem;
+}
+
+
+/* =======================================================
+   RIGHT SIDE
+======================================================= */
+
+.download-text{
+
+    flex:1;
+}
+
+
+.download-text h2{
+
+    font-size:3.4rem;
+
+    font-weight:900;
+
+    margin-bottom:20px;
+}
+
+
+.download-text p{
+
+    font-size:1.6rem;
+
+    line-height:1.5;
+}

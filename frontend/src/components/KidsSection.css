@@ -1,0 +1,94 @@
+/* ==========================================================
+   KIDS SECTION
+   ==========================================================
+
+   Layout
+
+   ------------------------------
+   | Image | Text               |
+   ------------------------------
+
+   Image stays on the left.
+
+   Text stays on the right.
+========================================================== */
+
+
+/* Entire Section */
+
+.kids-section{
+
+    padding:70px 12%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:80px 12%;
+
+    background:#000;
+
+    color:white;
+
+    border-top:8px solid #232323;
+}
+
+
+/* ==========================
+   LEFT SIDE
+========================== */
+
+.kids-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+
+/* Kids Image */
+
+.kids-image img{
+
+    width:100%;
+
+    max-width:560px;
+}
+
+
+/* ==========================
+   RIGHT SIDE
+========================== */
+
+.kids-text{
+
+    flex:1;
+}
+
+
+/* Main Heading */
+
+.kids-text h2{
+
+    font-size:3.4rem;
+
+    font-weight:900;
+
+    margin-bottom:20px;
+}
+
+
+/* Description */
+
+.kids-text p{
+
+    font-size:1.6rem;
+
+    line-height:1.5;
+
+    max-width:550px;
+}
