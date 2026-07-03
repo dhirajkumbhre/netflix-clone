@@ -44,7 +44,10 @@ function FaqSection() {
 
             {/* First Question */}
 
-            <div className="faq-item">
+            <div 
+                 className="faq-question"
+                 onClick={() => setIsOpen(!isOpen)}            
+            >
 
                 <h3>
 
