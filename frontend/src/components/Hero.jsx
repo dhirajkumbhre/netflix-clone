@@ -1,3 +1,4 @@
+import EmailSignup from "./EmailSignup";
 import React from "react";
 function Hero() {
   return (
@@ -13,11 +14,12 @@ function Hero() {
 
       <div className="email-box">
         <input
-          type="email"
+          type=<EmailSignup />
           placeholder="Email address"
         />
 
-        <button>Get Started</button>
+        <button>Get Started &gt;
+        </button>
       </div>
     </section>
   );

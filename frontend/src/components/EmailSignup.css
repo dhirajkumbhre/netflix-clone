@@ -1,0 +1,86 @@
+/* ==========================================
+   EMAIL SIGNUP COMPONENT
+
+   This component is reusable.
+
+   We use it:
+
+   ✔ Hero Section
+   ✔ FAQ Section
+
+========================================== */
+
+.email-signup{
+
+    margin-top:35px;
+
+    text-align:center;
+
+}
+
+
+.email-signup p{
+
+    color:white;
+
+    font-size:1.2rem;
+
+    margin-bottom:20px;
+
+}
+
+
+.email-form{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    max-width:700px;
+
+    margin:0 auto;
+
+}
+
+
+.email-form input{
+
+    flex:1;
+
+    padding:18px;
+
+    font-size:1rem;
+
+    border:none;
+
+    outline:none;
+
+}
+
+
+.email-form button{
+
+    background:#e50914;
+
+    color:white;
+
+    border:none;
+
+    padding:18px 32px;
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+.email-form button:hover{
+
+    background:#c11119;
+
+}
