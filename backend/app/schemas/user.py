@@ -6,17 +6,6 @@ USER SCHEMAS
 Schemas define what data the API expects
 and what data it returns.
 
-Think of a schema as a security guard.
-
-Before data enters our application,
-it checks:
-
-✔ Is the username present?
-✔ Is the email valid?
-✔ Is the password long enough?
-
-Only valid data is allowed through.
-
 ========================================================
 """
 
@@ -42,4 +31,18 @@ class UserRegister(BaseModel):
         min_length=8,
         max_length=100,
         description="User password"
+    )
+
+
+class UserLogin(BaseModel):
+    """
+    Data required when a user logs in.
+    """
+
+    email: EmailStr
+
+    password: str = Field(
+        ...,
+        min_length=8,
+        max_length=100
     )
