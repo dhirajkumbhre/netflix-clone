@@ -1,0 +1,38 @@
+.movie-row {
+  margin: 40px 0;
+}
+
+.movie-row h2 {
+  color: white;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.movie-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 30px 10px;
+  scroll-behavior: smooth;
+}
+
+.movie-list::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-card {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+}
+
+.movie-card img {
+  width: 180px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+}

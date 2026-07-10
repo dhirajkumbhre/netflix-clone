@@ -1,11 +1,45 @@
-from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session
-from app.deps import get_db
-from app import crud
+from fastapi import APIRouter
 
-router = APIRouter()
+from app.services.tmdb_service import (
+    get_trending_movies,
+    get_popular_movies,
+    get_top_rated_movies,
+    get_upcoming_movies,
+    get_movie,
+    search_movies,
+)
 
-@router.post("/{movie_id}/watchlist")
-def add_to_watchlist(movie_id: int, db: Session = Depends(get_db)):
-    user_id = 1  # TEMP — replace with JWT user later
-    return crud.add_to_watchlist(db, user_id, movie_id)
+router = APIRouter(
+    prefix="/api/movies",
+    tags=["Movies"]
+)
+
+
+@router.get("/trending")
+async def trending():
+    return await get_trending_movies()
+
+
+@router.get("/popular")
+async def popular():
+    return await get_popular_movies()
+
+
+@router.get("/top-rated")
+async def top_rated():
+    return await get_top_rated_movies()
+
+
+@router.get("/upcoming")
+async def upcoming():
+    return await get_upcoming_movies()
+
+
+@router.get("/movie/{movie_id}")
+async def movie(movie_id: int):
+    return await get_movie(movie_id)
+
+
+@router.get("/search")
+async def search(query: str):
+    return await search_movies(query)
