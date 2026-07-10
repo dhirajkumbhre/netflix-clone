@@ -1,6 +1,9 @@
-from fastapi import APIRouter
 
-from app.schemas.user import UserRegister, UserLogin
+
+from fastapi import APIRouter
+from fastapi import Depends
+from app.core.dependencies import get_current_user
+from app.schemas.user import UserRegister, UserLogin, UserResponse
 from app.services.auth_service import (
     register_user,
     login_user
@@ -20,3 +23,7 @@ async def register(user: UserRegister):
 @router.post("/login")
 async def login(user: UserLogin):
     return await login_user(user)
+
+@router.get("/me")
+async def get_me(current_user=Depends(get_current_user)):
+    return current_user

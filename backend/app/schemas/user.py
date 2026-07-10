@@ -46,3 +46,11 @@ class UserLogin(BaseModel):
         min_length=8,
         max_length=100
     )
+
+class UserResponse(BaseModel):
+    id: str
+    username: str
+    email: EmailStr
+
+    class Config:
+        from_attributes = True
