@@ -49,12 +49,15 @@ function MovieRow({ title, movies }) {
       ====================================== */}
 
       <div
-        style={{
+        style=
+        {{
           display: "flex",
           gap: "20px",
 
           // Allow horizontal scrolling like Netflix
           overflowX: "auto",
+          scrollBehavior: "smooth",
+          paddingBottom: "10px",
 
           padding: "0 20px",
 
@@ -85,5 +88,4 @@ function MovieRow({ title, movies }) {
   );
 
 }
-
 export default MovieRow;

@@ -1,0 +1,82 @@
+.hero-banner {
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(0,0,0,.85) 15%, rgba(0,0,0,.25) 55%, transparent),
+    linear-gradient(to top, #111 2%, transparent 30%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  margin-left: 70px;
+}
+
+.hero-title {
+  font-size: 72px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 0 5px 20px rgba(0,0,0,.7);
+}
+
+.hero-info {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #e5e5e5;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-play,
+.hero-info-btn {
+  padding: 14px 34px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+.hero-play {
+  background: white;
+  color: black;
+}
+
+.hero-play:hover {
+  background: #ddd;
+  transform: scale(1.05);
+}
+
+.hero-info-btn {
+  background: rgba(109,109,110,.7);
+  color: white;
+}
+
+.hero-info-btn:hover {
+  background: rgba(109,109,110,.9);
+  transform: scale(1.05);
+}

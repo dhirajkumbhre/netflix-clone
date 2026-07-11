@@ -62,4 +62,13 @@ export const removeFromWatchlist = async (email, movieId) => {
   return response.data;
 };
 
+// ============================================================
+// Get Movie Trailer / Videos
+// ============================================================
+
+export async function getMovieVideos(movieId) {
+  const response = await api.get(`/movies/movie/${movieId}/videos`);
+  return response.data;
+}
+
 export default api;

@@ -4,96 +4,65 @@
 // Displays one featured movie at the top of Home.
 //
 // Props:
-// movie -> One movie object
+// movie -> Featured movie object
 // ============================================================
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./HeroBanner.css";
 
 function HeroBanner({ movie }) {
-
   const navigate = useNavigate();
 
-  // If movie hasn't loaded yet
+  // Don't render until movie loads
   if (!movie) return null;
 
   return (
     <div
+      className="hero-banner"
       style={{
-        height: "80vh",
-        backgroundImage: `linear-gradient(
-          rgba(0,0,0,.3),
-          rgba(0,0,0,.8)
-        ),
-        url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
-
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-
-        display: "flex",
-        alignItems: "center",
-
-        padding: "60px",
-
-        color: "white",
+        backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
       }}
     >
+      {/* Dark Overlay */}
+      <div className="hero-overlay"></div>
 
-      <div
-        style={{
-          maxWidth: "600px",
-        }}
-      >
+      {/* Hero Content */}
+      <div className="hero-content">
+        {/* Movie Title */}
+        <h1 className="hero-title">{movie.title}</h1>
 
-        <h1
-          style={{
-            fontSize: "60px",
-            marginBottom: "20px",
-          }}
-        >
-          {movie.title}
-        </h1>
+        {/* Movie Information */}
+        <div className="hero-info">
+          <span>⭐ {movie.vote_average.toFixed(1)}</span>
 
-        <p
-          style={{
-            fontSize: "18px",
-            marginBottom: "30px",
-          }}
-        >
+          <span>📅 {movie.release_date?.split("-")[0]}</span>
+
+          <span>🌍 {movie.original_language.toUpperCase()}</span>
+        </div>
+
+        {/* Movie Description */}
+        <p className="hero-description">
           {movie.overview}
         </p>
 
-        <button
-          onClick={() => navigate(`/movie/${movie.id}`)}
-          style={{
-            padding: "14px 28px",
-            fontSize: "18px",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-            marginRight: "15px",
-          }}
-        >
-          ▶ Play
-        </button>
+        {/* Buttons */}
+        <div className="hero-buttons">
+          <button
+            className="hero-play"
+            onClick={() => navigate(`/movie/${movie.id}`)}
+          >
+            ▶ Play
+          </button>
 
-        <button
-          onClick={() => navigate(`/movie/${movie.id}`)}
-          style={{
-            padding: "14px 28px",
-            fontSize: "18px",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-            background: "#555",
-            color: "white",
-          }}
-        >
-          ℹ More Info
-        </button>
-
+          <button
+            className="hero-info-btn"
+            onClick={() => navigate(`/movie/${movie.id}`)}
+          >
+            ℹ More Info
+          </button>
+        </div>
       </div>
-
     </div>
   );
 }

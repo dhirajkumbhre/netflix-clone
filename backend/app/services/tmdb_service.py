@@ -5,6 +5,8 @@ from app.core.config import settings
 BASE_URL = "https://api.themoviedb.org/3"
 
 
+
+
 async def fetch(endpoint: str, params: dict = None):
     params = params or {}
 
@@ -40,6 +42,12 @@ async def get_upcoming_movies():
 async def get_movie(movie_id: int):
     return await fetch(f"movie/{movie_id}")
 
+# ============================================================
+# Get movie videos (trailers, teasers, clips)
+# ============================================================
+
+async def get_movie_videos(movie_id: int):
+    return await fetch(f"movie/{movie_id}/videos")
 
 async def search_movies(query: str):
     return await fetch(

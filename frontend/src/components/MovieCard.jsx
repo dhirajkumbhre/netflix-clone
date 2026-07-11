@@ -10,7 +10,7 @@
 // ✅ Watchlist
 // ✅ Future Recommendation pages
 // ============================================================
-
+import "./MovieCard.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -39,13 +39,12 @@ function MovieCard({ movie }) {
         color: "white",
       }}
     >
+      
 
-      <div
-        style={{
-          transition: "0.3s",
-          cursor: "pointer",
-        }}
-      >
+      {/*===updated moviecar css ====*/}
+
+      <div className="movie-card">
+  
 
         {/* ==========================
             Movie Poster

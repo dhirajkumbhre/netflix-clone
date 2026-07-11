@@ -6,6 +6,7 @@ from app.services.tmdb_service import (
     get_top_rated_movies,
     get_upcoming_movies,
     get_movie,
+    get_movie_videos,
     search_movies,
 )
 
@@ -43,3 +44,12 @@ async def movie(movie_id: int):
 @router.get("/search")
 async def search(query: str):
     return await search_movies(query)
+
+
+# ============================================================
+# Get Movie Trailer / Videos
+# ============================================================
+
+@router.get("/movie/{movie_id}/videos")
+async def movie_videos(movie_id: int):
+    return await get_movie_videos(movie_id)
