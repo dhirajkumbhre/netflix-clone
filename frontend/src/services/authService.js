@@ -1,4 +1,4 @@
-import { apiPost } from "./api";
+import { apiPost, apiGet } from "./api";
 
 export async function login(email, password) {
   return apiPost("/auth/login", {
@@ -13,4 +13,8 @@ export async function signup(username, email, password) {
     email,
     password,
   });
+}
+
+export async function getCurrentUser() {
+  return apiGet("/auth/me");
 }

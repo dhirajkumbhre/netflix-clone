@@ -12,24 +12,27 @@ function Login() {
     e.preventDefault();
 
     try {
+      // Send login request to backend
+      const res = await login(email, password);
 
+      console.log("LOGIN RESPONSE:", res);
 
-      
-    const res = await login(email, password);
+      if (res.success) {
+        console.log("TOKEN:", res.access_token);
 
-    console.log("LOGIN RESPONSE:", res);
+        // Save JWT token
+        localStorage.setItem("token", res.access_token);
 
-  if (res.success) {
-    console.log("TOKEN:", res.access_token);
+        // Save email for Watchlist
+        localStorage.setItem("email", email);
 
-    localStorage.setItem("token", res.access_token);
+        alert("Login Successful!");
 
-    alert("Login Successful!");
-    navigate("/home");
-    } else {
-    alert(res.message);
-    }
-
+        // Go to Home page
+        navigate("/home");
+      } else {
+        alert(res.message);
+      }
     } catch (err) {
       console.error(err);
       alert("Invalid Email or Password");

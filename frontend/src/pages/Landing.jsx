@@ -34,13 +34,9 @@ function Landing() {
       {/* Hero Banner */}
       <Hero />
 
-      <MovieRow title="Trending Now" fetchMovies={getTrendingMovies} />
 
-      <MovieRow title="Popular" fetchMovies={getPopularMovies} />
 
-      <MovieRow title="Top Rated" fetchMovies={getTopRatedMovies} />
 
-      <MovieRow title="Upcoming" fetchMovies={getUpcomingMovies} />
 
       {/* Feature 1 */}
       <FeatureSection />

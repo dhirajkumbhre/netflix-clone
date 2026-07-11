@@ -4,6 +4,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.auth import router as auth_router
 from app.api.movies import router as movies_router
 
+from app.api.watchlist import router as watchlist_router
+
+
 app = FastAPI(
     title="NetflixX API",
     version="1.0.0"
@@ -29,3 +32,6 @@ async def root():
     return {
         "message": "Netflix API is running 🚀"
     }
+
+
+app.include_router(watchlist_router)

@@ -19,3 +19,5 @@ client = AsyncIOMotorClient(settings.MONGODB_URL)
 
 # Select database
 db = client[settings.DATABASE_NAME]
+
+watchlist_collection = db.watchlist

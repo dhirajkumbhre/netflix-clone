@@ -1,51 +1,89 @@
-import React, { useEffect, useState } from "react";
-import "./MovieRow.css";
-import MovieModal from "./MovieModal";
+// ============================================================
+// MovieRow Component
+//
+// Purpose:
+// Displays a horizontal row of movies.
+//
+// Reusable for:
+// ✅ Trending
+// ✅ Popular
+// ✅ Top Rated
+// ✅ Upcoming
+//
+// Props:
+// title  -> Row title
+// movies -> Array of movie objects
+// ============================================================
 
-function MovieRow({ title, fetchMovies }) {
-  const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
+import React from "react";
 
-  useEffect(() => {
-    async function loadMovies() {
-      try {
-        const data = await fetchMovies();
-        setMovies(data.results);
-      } catch (error) {
-        console.error(error);
-      }
-    }
+// Import reusable Movie Card
+import MovieCard from "./MovieCard";
 
-    loadMovies();
-  }, [fetchMovies]);
+function MovieRow({ title, movies }) {
 
   return (
-    <>
-      <div className="movie-row">
-        <h2>{title}</h2>
 
-        <div className="movie-list">
-          {movies.slice(0, 10).map((movie) => (
-            <div
-              className="movie-card"
-              key={movie.id}
-              onClick={() => setSelectedMovie(movie)}
-            >
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-              />
-            </div>
-          ))}
-        </div>
+    <div
+      style={{
+        marginBottom: "50px",
+      }}
+    >
+
+      {/* =====================================
+          Row Title
+      ====================================== */}
+
+      <h2
+        style={{
+          color: "white",
+          marginBottom: "20px",
+          marginLeft: "20px",
+        }}
+      >
+        {title}
+      </h2>
+
+      {/* =====================================
+          Horizontal Movie List
+      ====================================== */}
+
+      <div
+        style={{
+          display: "flex",
+          gap: "20px",
+
+          // Allow horizontal scrolling like Netflix
+          overflowX: "auto",
+
+          padding: "0 20px",
+
+          // Prevent movies from wrapping
+          whiteSpace: "nowrap",
+
+          scrollbarWidth: "none",
+        }}
+      >
+
+        {/* =====================================
+            Render one MovieCard for each movie
+        ====================================== */}
+
+        {movies.map((movie) => (
+
+          <MovieCard
+            key={movie.id}
+            movie={movie}
+          />
+
+        ))}
+
       </div>
 
-      <MovieModal
-        movie={selectedMovie}
-        onClose={() => setSelectedMovie(null)}
-      />
-    </>
+    </div>
+
   );
+
 }
 
 export default MovieRow;

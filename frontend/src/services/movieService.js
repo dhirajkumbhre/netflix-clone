@@ -1,3 +1,4 @@
+
 import axios from "axios";
 
 const api = axios.create({
@@ -21,6 +22,43 @@ export const getTopRatedMovies = async () => {
 
 export const getUpcomingMovies = async () => {
   const response = await api.get("/movies/upcoming");
+  return response.data;
+};
+
+export const getMovieDetails = async (movieId) => {
+  const response = await api.get(`/movies/movie/${movieId}`);
+  return response.data;
+};
+
+
+export const searchMovies = async (query) => {
+  const response = await api.get(`/movies/search?query=${query}`);
+  return response.data;
+};
+
+
+
+
+export const addToWatchlist = async (movie) => {
+  const response = await api.post("/watchlist", movie);
+  return response.data;
+};
+
+export const getWatchlist = async (email) => {
+  const response = await api.get(`/watchlist/${email}`);
+  return response.data;
+};
+
+
+// ==========================================
+// Remove a movie from the user's watchlist
+//
+// Calls:
+// DELETE /api/watchlist/{email}/{movie_id}
+// ==========================================
+
+export const removeFromWatchlist = async (email, movieId) => {
+  const response = await api.delete(`/watchlist/${email}/${movieId}`);
   return response.data;
 };
 
