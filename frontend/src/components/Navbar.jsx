@@ -2,35 +2,27 @@
 // Netflix Navbar
 //
 // Purpose:
-// - Display the Netflix logo.
-// - Show navigation links after login.
-// - Show Sign In before login.
-// - Allow Logout.
+// - Navigation
+// - Profile
+// - Logout
 // ============================================================
 
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
+import "./Navbar.css";
+
 function Navbar() {
 
-  // React Router hooks
   const navigate = useNavigate();
   const location = useLocation();
 
-  // ==========================================================
-  // Check if user is logged in
-  //
-  // If token exists in localStorage,
-  // user is considered authenticated.
-  // ==========================================================
   const isLoggedIn = localStorage.getItem("token");
 
-  // ==========================================================
+  // ==========================================
   // Logout
-  //
-  // Remove saved login information
-  // then return to Landing Page.
-  // ==========================================================
+  // ==========================================
+
   const logout = () => {
 
     localStorage.removeItem("token");
@@ -42,52 +34,14 @@ function Navbar() {
 
   return (
 
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
+    <nav className="navbar">
 
-        padding: "20px 50px",
+      {/* Left */}
 
-        background: "#111",
-
-        color: "white",
-
-        position: "sticky",
-        top: 0,
-        zIndex: 1000,
-      }}
-    >
-
-      {/* =====================================================
-          Left Side
-      ====================================================== */}
-
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "30px",
-        }}
-      >
-
-        {/* =====================================================
-            Netflix Logo
-
-            If user is logged in:
-            NETFLIX -> /home
-
-            Otherwise:
-            NETFLIX -> Landing Page
-        ====================================================== */}
+      <div className="nav-left">
 
         <h1
-          style={{
-            color: "#E50914",
-            cursor: "pointer",
-            margin: 0,
-          }}
+          className="logo"
           onClick={() => {
 
             if (isLoggedIn) {
@@ -105,72 +59,68 @@ function Navbar() {
           NETFLIX
         </h1>
 
-        {/* =====================================================
-            Navigation Links
-
-            Only visible after Login.
-        ====================================================== */}
-
         {isLoggedIn && (
 
-          <>
+          <div className="nav-links">
 
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate("/home")}
-            >
+            <span onClick={() => navigate("/home")}>
               Home
             </span>
 
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate("/search")}
-            >
+            <span onClick={() => navigate("/search")}>
               Search
             </span>
 
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate("/watchlist")}
-            >
+            <span onClick={() => navigate("/watchlist")}>
               Watchlist
             </span>
 
-          </>
+          </div>
 
         )}
 
       </div>
 
-      {/* =====================================================
-          Right Side
-      ====================================================== */}
+      {/* Right */}
 
-      {isLoggedIn ? (
+      <div className="nav-right">
 
-        // Show Logout after Login
-        <button
-          className="signin-btn"
-          onClick={logout}
-        >
-          Logout
-        </button>
+        {isLoggedIn ? (
 
-      ) : (
+          <>
 
-        // Show Sign In only when not already on Login page
-        location.pathname !== "/login" && (
+            <div
+              className="profile-btn"
+              onClick={() => navigate("/profile")}
+            >
+              👤
+            </div>
 
-          <button
-            className="signin-btn"
-            onClick={() => navigate("/login")}
-          >
-            Sign In
-          </button>
+            <button
+              className="logout-btn"
+              onClick={logout}
+            >
+              Logout
+            </button>
 
-        )
+          </>
 
-      )}
+        ) : (
+
+          location.pathname !== "/login" && (
+
+            <button
+              className="logout-btn"
+              onClick={() => navigate("/login")}
+            >
+              Sign In
+            </button>
+
+          )
+
+        )}
+
+      </div>
 
     </nav>
 

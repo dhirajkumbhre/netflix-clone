@@ -12,6 +12,8 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import Watchlist from "./pages/Watchlist";
 
 
+import Profile from "./pages/Profile";
+
 function App() {
   return (
     <Routes>
@@ -47,6 +49,17 @@ function App() {
   element={
     <ProtectedRoute>
       <Watchlist />
+      
+    </ProtectedRoute>
+  }
+/>
+
+
+<Route
+  path="/profile"
+  element={
+    <ProtectedRoute>
+      <Profile />
     </ProtectedRoute>
   }
 />

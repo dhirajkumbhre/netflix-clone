@@ -54,3 +54,6 @@ async def search_movies(query: str):
         "search/movie",
         {"query": query}
     )
+
+async def get_movie_videos(movie_id: int):
+    return await fetch(f"movie/{movie_id}/videos")

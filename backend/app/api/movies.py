@@ -41,6 +41,10 @@ async def movie(movie_id: int):
     return await get_movie(movie_id)
 
 
+@router.get("/movie/{movie_id}/videos")
+async def movie_videos(movie_id: int):
+    return await get_movie_videos(movie_id)
+
 @router.get("/search")
 async def search(query: str):
     return await search_movies(query)

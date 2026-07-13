@@ -2,75 +2,98 @@
 // MovieRow Component
 //
 // Purpose:
-// Displays a horizontal row of movies.
+// Displays one horizontal Netflix-style movie row.
 //
-// Reusable for:
-// ✅ Trending
-// ✅ Popular
-// ✅ Top Rated
-// ✅ Upcoming
-//
-// Props:
-// title  -> Row title
-// movies -> Array of movie objects
+// Features:
+// ✅ Left / Right scroll buttons
+// ✅ Smooth scrolling
+// ✅ Reusable
 // ============================================================
 
-import React from "react";
-
-// Import reusable Movie Card
+import React, { useRef } from "react";
 import MovieCard from "./MovieCard";
 
 function MovieRow({ title, movies }) {
+
+  // Reference to the scrolling container
+  const rowRef = useRef(null);
+
+  // Scroll Left
+  const scrollLeft = () => {
+    rowRef.current.scrollBy({
+      left: -800,
+      behavior: "smooth",
+    });
+  };
+
+  // Scroll Right
+  const scrollRight = () => {
+    rowRef.current.scrollBy({
+      left: 800,
+      behavior: "smooth",
+    });
+  };
 
   return (
 
     <div
       style={{
-        marginBottom: "50px",
+        marginBottom: "60px",
+        position: "relative",
       }}
     >
 
-      {/* =====================================
+      {/* ==========================
           Row Title
-      ====================================== */}
+      ========================== */}
 
       <h2
         style={{
           color: "white",
+          marginLeft: "25px",
           marginBottom: "20px",
-          marginLeft: "20px",
+          fontSize: "28px",
         }}
       >
         {title}
       </h2>
 
-      {/* =====================================
-          Horizontal Movie List
-      ====================================== */}
+      {/* Left Arrow */}
 
-      <div
-        style=
-        {{
-          display: "flex",
-          gap: "20px",
-
-          // Allow horizontal scrolling like Netflix
-          overflowX: "auto",
-          scrollBehavior: "smooth",
-          paddingBottom: "10px",
-
-          padding: "0 20px",
-
-          // Prevent movies from wrapping
-          whiteSpace: "nowrap",
-
-          scrollbarWidth: "none",
+      <button
+        onClick={scrollLeft}
+        style={{
+          position: "absolute",
+          left: "10px",
+          top: "50%",
+          transform: "translateY(-50%)",
+          zIndex: 10,
+          width: "45px",
+          height: "90px",
+          background: "rgba(0,0,0,.65)",
+          color: "white",
+          border: "none",
+          cursor: "pointer",
+          fontSize: "28px",
+          borderRadius: "6px",
         }}
       >
+        ❮
+      </button>
 
-        {/* =====================================
-            Render one MovieCard for each movie
-        ====================================== */}
+      {/* Movies */}
+
+      <div
+        ref={rowRef}
+        style={{
+          display: "flex",
+          gap: "16px",
+          overflowX: "auto",
+          scrollBehavior: "smooth",
+          scrollbarWidth: "none",
+          padding: "0 45px",
+        }}
+      >
 
         {movies.map((movie) => (
 
@@ -83,9 +106,33 @@ function MovieRow({ title, movies }) {
 
       </div>
 
+      {/* Right Arrow */}
+
+      <button
+        onClick={scrollRight}
+        style={{
+          position: "absolute",
+          right: "10px",
+          top: "50%",
+          transform: "translateY(-50%)",
+          zIndex: 10,
+          width: "45px",
+          height: "90px",
+          background: "rgba(0,0,0,.65)",
+          color: "white",
+          border: "none",
+          cursor: "pointer",
+          fontSize: "28px",
+          borderRadius: "6px",
+        }}
+      >
+        ❯
+      </button>
+
     </div>
 
   );
 
 }
+
 export default MovieRow;
