@@ -1,0 +1,255 @@
+/* ==========================================================
+   Movie Details Page
+========================================================== */
+
+.movie-details-page{
+
+    min-height:100vh;
+
+    background:#111;
+
+    color:white;
+
+    padding:120px 60px 60px;
+
+}
+
+/* ==========================================================
+   Main Layout
+========================================================== */
+
+.movie-details-container{
+
+    display:flex;
+
+    gap:50px;
+
+    align-items:flex-start;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+/* ==========================================================
+   Poster
+========================================================== */
+
+.movie-poster{
+
+    width:320px;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.5);
+
+}
+
+.movie-poster img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/* ==========================================================
+   Right Side
+========================================================== */
+
+.movie-content{
+
+    flex:1;
+
+}
+
+/* ==========================================================
+   Title
+========================================================== */
+
+.movie-content h1{
+
+    font-size:52px;
+
+    margin-bottom:18px;
+
+    line-height:1.1;
+
+}
+
+/* ==========================================================
+   Meta
+========================================================== */
+
+.movie-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.movie-meta span{
+
+    background:#1d1d1d;
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   Overview
+========================================================== */
+
+.movie-overview{
+
+    color:#d5d5d5;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+.movie-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.watchlist-btn{
+
+    background:#E50914;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.watchlist-btn:hover{
+
+    background:#c40812;
+
+}
+
+.trailer-btn{
+
+    background:white;
+
+    color:black;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.trailer-btn:hover{
+
+    background:#ececec;
+
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media(max-width:900px){
+
+.movie-details-page{
+
+    padding:100px 25px 40px;
+
+}
+
+.movie-details-container{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.movie-poster{
+
+    width:260px;
+
+}
+
+.movie-content{
+
+    text-align:center;
+
+}
+
+.movie-meta{
+
+    justify-content:center;
+
+}
+
+.movie-buttons{
+
+    justify-content:center;
+
+}
+
+.movie-content h1{
+
+    font-size:38px;
+
+}
+
+.movie-overview{
+
+    font-size:16px;
+
+}
+
+}

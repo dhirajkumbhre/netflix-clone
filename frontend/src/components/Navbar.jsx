@@ -5,9 +5,11 @@
 // - Navigation
 // - Profile
 // - Logout
+// - Transparent at top
+// - Black after scrolling
 // ============================================================
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import "./Navbar.css";
@@ -18,6 +20,34 @@ function Navbar() {
   const location = useLocation();
 
   const isLoggedIn = localStorage.getItem("token");
+
+  // ==========================================
+  // Navbar Background
+  // ==========================================
+
+  const [showBackground, setShowBackground] = useState(false);
+
+  useEffect(() => {
+
+    function handleScroll() {
+
+      if (window.scrollY > 80) {
+
+        setShowBackground(true);
+
+      } else {
+
+        setShowBackground(false);
+
+      }
+
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+
+  }, []);
 
   // ==========================================
   // Logout
@@ -34,7 +64,7 @@ function Navbar() {
 
   return (
 
-    <nav className="navbar">
+    <nav className={`navbar ${showBackground ? "navbar-black" : ""}`}>
 
       {/* Left */}
 

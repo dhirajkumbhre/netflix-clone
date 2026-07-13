@@ -1,125 +1,191 @@
-/* ===========================
-   Navbar
-=========================== */
+/* ==========================================================
+   Netflix Navbar
+========================================================== */
 
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.navbar{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 50px;
+
+    background:rgba(20,20,20,.75);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    box-sizing:border-box;
+}
+
+/* ==========================================================
+   Left Section
+========================================================== */
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+/* ==========================================================
+   Logo
+========================================================== */
+
+.logo {
+  color: #E50914;
+
+  font-size: 34px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+.logo:hover {
+  transform: scale(1.04);
+}
+
+/* ==========================================================
+   Navigation Links
+========================================================== */
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links span {
+
+  color: white;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+.nav-links span:hover {
+
+  color: #E50914;
+
+}
+
+/* ==========================================================
+   Right Section
+========================================================== */
+
+.nav-right {
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
-  padding: 18px 50px;
+  gap: 14px;
 
-  background: rgba(20, 20, 20, 0.85);
-  backdrop-filter: blur(12px);
-
-  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-/* Left */
+/* ==========================================================
+   Profile Button
+========================================================== */
 
-.nav-left{
-  display:flex;
-  align-items:center;
-  gap:35px;
+.profile-btn {
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #E50914;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: .25s;
 }
 
-/* Logo */
+.profile-btn:hover {
+
+  transform: scale(1.08);
+
+}
+
+/* ==========================================================
+   Logout Button
+========================================================== */
+
+.logout-btn {
+
+  background: #E50914;
+  color: white;
+
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: .25s;
+}
+
+.logout-btn:hover {
+
+  background: #c40812;
+
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width:768px){
+
+.navbar{
+
+    padding:12px 20px;
+
+}
 
 .logo{
-  color:#E50914;
-  font-size:34px;
-  font-weight:800;
-  letter-spacing:1px;
-  cursor:pointer;
-  transition:.3s;
-}
 
-.logo:hover{
-  transform:scale(1.05);
-}
+    font-size:28px;
 
-/* Links */
+}
 
 .nav-links{
-  display:flex;
-  gap:28px;
+
+    gap:16px;
+
 }
 
 .nav-links span{
-  color:#fff;
-  cursor:pointer;
-  font-size:17px;
-  transition:.25s;
-}
 
-.nav-links span:hover{
-  color:#E50914;
-}
-
-/* Right */
-
-.nav-right{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-/* Profile */
-
-.profile-btn{
-
-  width:42px;
-  height:42px;
-
-  border-radius:50%;
-
-  background:#E50914;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  cursor:pointer;
-
-  font-size:20px;
-
-  transition:.3s;
-}
-
-.profile-btn:hover{
-
-  transform:scale(1.08);
+    font-size:15px;
 
 }
-
-/* Logout */
 
 .logout-btn{
 
-  background:#E50914;
-
-  color:white;
-
-  border:none;
-
-  padding:10px 18px;
-
-  border-radius:8px;
-
-  cursor:pointer;
-
-  font-weight:bold;
-
-  transition:.25s;
+    padding:8px 14px;
 
 }
-
-.logout-btn:hover{
-
-  background:#c40812;
 
 }

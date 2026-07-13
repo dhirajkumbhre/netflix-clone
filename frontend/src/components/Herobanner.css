@@ -1,205 +1,236 @@
 /* ==========================================================
-   Hero Banner
+   HERO BANNER
 ========================================================== */
 
-.hero-banner {
-  height: 90vh;
-  background-size: cover;
-  background-position: center center;
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: white;
-  overflow: hidden;
+.hero-banner{
+
+    position:relative;
+
+    height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+
+    color:white;
+
+    overflow:hidden;
 }
 
-/* Dark Netflix Overlay */
+/* ==========================================================
+   OVERLAY
+========================================================== */
 
-.hero-overlay {
+.hero-overlay{
 
-  position: absolute;
-  inset: 0;
+    position:absolute;
+    inset:0;
 
-  background:
-      linear-gradient(
-          to right,
-          rgba(0,0,0,.92) 10%,
-          rgba(0,0,0,.55) 45%,
-          rgba(0,0,0,.15) 70%,
-          transparent
-      ),
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.92) 15%,
+        rgba(0,0,0,.65) 40%,
+        rgba(0,0,0,.30) 70%,
+        rgba(0,0,0,.20) 100%
+    ),
 
-      linear-gradient(
-          to top,
-          #111 3%,
-          transparent 35%
-      );
+    linear-gradient(
+        to top,
+        #111 5%,
+        transparent 35%
+    );
 
 }
 
 /* ==========================================================
-   Hero Content
+   CONTENT
 ========================================================== */
 
-.hero-content {
+.hero-content{
 
-  position: relative;
-  z-index: 2;
+    position:relative;
+    z-index:5;
 
-  width: 650px;
+    width:600px;
 
-  margin-left: 70px;
+    margin-left:70px;
+
+    margin-top:40px;
 
 }
 
 /* ==========================================================
-   Movie Title
+   TITLE
 ========================================================== */
 
-.hero-title {
+.hero-title{
 
-  font-size: 76px;
+    font-size:64px;
 
-  font-weight: 900;
+    font-weight:900;
 
-  line-height: 1.05;
+    line-height:1.08;
 
-  margin-bottom: 20px;
+    margin-bottom:22px;
 
-  text-shadow: 0 8px 25px rgba(0,0,0,.75);
+    text-shadow:0 5px 20px rgba(0,0,0,.8);
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
 
 }
 
 /* ==========================================================
-   Movie Info
+   INFO
 ========================================================== */
 
-.hero-info {
+.hero-info{
 
-  display: flex;
+    display:flex;
 
-  gap: 22px;
+    flex-wrap:wrap;
 
-  margin-bottom: 22px;
+    gap:12px;
 
-  font-size: 18px;
-
-  font-weight: 700;
+    margin-bottom:25px;
 
 }
 
-.hero-info span {
+.hero-info span{
 
-  background: rgba(255,255,255,.08);
+    background:rgba(255,255,255,.12);
 
-  padding: 7px 14px;
+    backdrop-filter:blur(12px);
 
-  border-radius: 25px;
+    padding:8px 15px;
 
-  backdrop-filter: blur(10px);
+    border-radius:25px;
 
-}
+    font-weight:600;
 
-/* ==========================================================
-   Description
-========================================================== */
-
-.hero-description {
-
-  color: #ddd;
-
-  font-size: 18px;
-
-  line-height: 1.8;
-
-  margin-bottom: 35px;
-
-  max-width: 620px;
+    font-size:15px;
 
 }
 
 /* ==========================================================
-   Buttons
+   DESCRIPTION
 ========================================================== */
 
-.hero-buttons {
+.hero-description{
 
-  display: flex;
+    font-size:18px;
 
-  gap: 18px;
+    color:#ddd;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:4;
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
 
 }
 
 .hero-play,
-.hero-info-btn {
+.hero-info-btn{
 
-  border: none;
+    border:none;
 
-  border-radius: 8px;
+    border-radius:8px;
 
-  padding: 14px 36px;
+    cursor:pointer;
 
-  cursor: pointer;
+    padding:15px 36px;
 
-  font-size: 18px;
+    font-size:17px;
 
-  font-weight: bold;
+    font-weight:bold;
 
-  transition: all .3s ease;
-
-}
-
-.hero-play {
-
-  background: white;
-
-  color: black;
+    transition:.25s;
 
 }
 
-.hero-play:hover {
+.hero-play{
 
-  transform: translateY(-3px);
+    background:white;
 
-  background: #ececec;
-
-  box-shadow: 0 12px 30px rgba(255,255,255,.25);
+    color:black;
 
 }
 
-.hero-info-btn {
+.hero-play:hover{
 
-  background: rgba(109,109,110,.75);
+    transform:translateY(-2px);
 
-  color: white;
+    background:#ececec;
 
 }
 
-.hero-info-btn:hover {
+.hero-info-btn{
 
-  transform: translateY(-3px);
+    background:rgba(109,109,110,.75);
 
-  background: rgba(109,109,110,.95);
+    color:white;
+
+}
+
+.hero-info-btn:hover{
+
+    background:rgba(109,109,110,.95);
+
+    transform:translateY(-2px);
 
 }
 
 /* ==========================================================
-   Responsive
+   RESPONSIVE
 ========================================================== */
 
-@media (max-width:900px){
+@media(max-width:900px){
+
+.hero-banner{
+
+    height:90vh;
+
+}
 
 .hero-content{
 
-    margin-left:30px;
-
     width:90%;
+
+    margin-left:25px;
+
+    margin-top:70px;
 
 }
 
 .hero-title{
 
-    font-size:52px;
+    font-size:42px;
 
 }
 
