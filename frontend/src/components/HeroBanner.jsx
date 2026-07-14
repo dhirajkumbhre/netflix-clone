@@ -4,9 +4,9 @@
 // Displays one featured movie at the top of Home.
 //
 // Features
-// ✅ Cinematic Hero
-// ✅ Responsive
-// ✅ Stable Layout
+//  cinematic Hero
+// Responsive
+// sable Layout
 // ============================================================
 
 import React from "react";
@@ -29,15 +29,15 @@ function HeroBanner({ movie }) {
       }}
     >
 
-      {/* Dark Overlay */}
+      {/* Dark overlay */}
 
       <div className="hero-overlay"></div>
 
-      {/* Hero Content */}
+      {/* Hero content */}
 
       <div className="hero-content">
 
-        {/* Movie Title */}
+        {/* movie Title */}
 
         <h1 className="hero-title">
 
@@ -45,7 +45,7 @@ function HeroBanner({ movie }) {
 
         </h1>
 
-        {/* Movie Info */}
+        {/* Movie info */}
 
         <div className="hero-info">
 
