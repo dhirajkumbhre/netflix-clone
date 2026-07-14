@@ -1,4 +1,4 @@
-const API = "http://localhost:8000/api";
+const API = "https://netflix-clone-4c4d.onrender.com";
 
 export async function apiGet(path) {
   const token = localStorage.getItem("token");
