@@ -14,7 +14,7 @@ function Hero() {
 
       <div className="email-box">
         <input
-          type=<EmailSignup />
+          type="email"
           placeholder="Email address"
         />
 
