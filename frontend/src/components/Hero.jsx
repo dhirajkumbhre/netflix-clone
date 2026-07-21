@@ -1,5 +1,6 @@
-import EmailSignup from "./EmailSignup";
 import React from "react";
+import EmailSignup from "./EmailSignup";
+
 function Hero() {
   return (
     <section className="hero">
@@ -7,20 +8,7 @@ function Hero() {
 
       <h2>Watch anywhere. Cancel anytime.</h2>
 
-      <p>
-        Ready to watch? Enter your email to create
-        or restart your membership.
-      </p>
-
-      <div className="email-box">
-        <input
-          type="email"
-          placeholder="Email address"
-        />
-
-        <button>Get Started &gt;
-        </button>
-      </div>
+      <EmailSignup />
     </section>
   );
 }
