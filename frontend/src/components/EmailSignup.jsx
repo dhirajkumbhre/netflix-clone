@@ -1,33 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./EmailSignup.css";
 
 function EmailSignup() {
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+
+  function handleGetStarted() {
+    navigate("/register", {
+      state: { email },
+    });
+  }
+
   return (
     <div className="email-signup">
-
-      {/* Small description */}
-
       <p>
         Ready to watch? Enter your email to create or restart your membership.
       </p>
 
-      {/* Email input and button */}
-
       <div className="email-form">
-
         <input
           type="email"
           placeholder="Email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
-        <button>
-
+        <button onClick={handleGetStarted}>
           Get Started &gt;
-
         </button>
-
       </div>
-
     </div>
   );
 }
