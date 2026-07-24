@@ -5,8 +5,8 @@
 // Displays one horizontal Netflix-style movie row.
 //
 // Features:
-// ✅ Left / Right scroll buttons
-// ✅ Smooth scrolling
+// ✅Left / Right scroll buttons
+//✅ Smooth scrolling
 // ✅ Reusable
 // ============================================================
 

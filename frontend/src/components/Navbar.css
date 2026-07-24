@@ -20,32 +20,68 @@
 
 .navbar{
 
+<<<<<<< HEAD
     position: fixed;
+=======
+    position:fixed;
+>>>>>>> 2592bf7 (update moviecard and movierow)
 
     top:0;
+
     left:0;
 
     width:100%;
 
+<<<<<<< HEAD
     z-index:1000;
+=======
+    height:70px;
+>>>>>>> 2592bf7 (update moviecard and movierow)
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
+<<<<<<< HEAD
     padding:18px 40px;
 
     background:rgba(20,20,20,.75);
+=======
+    padding:0 40px;
+
+    background:rgba(20,20,20,.75);
+
+>>>>>>> 2592bf7 (update moviecard and movierow)
     backdrop-filter:blur(10px);
 
     border-bottom:1px solid rgba(255,255,255,.08);
 
     box-sizing:border-box;
 
+<<<<<<< HEAD
     transition:
         background .3s ease,
         backdrop-filter .3s ease,
         padding .3s ease;
+=======
+    z-index:1000;
+>>>>>>> 2592bf7 (update moviecard and movierow)
+
+}
+
+
+/* ==========================================================
+   Navbar Scroll State
+   ----------------------------------------------------------
+   Applied from React after the user scrolls more than 80px.
+   Makes the navbar darker for better readability.
+========================================================== */
+
+.navbar-black{
+
+    background:#141414;
 
 }
 
@@ -293,6 +329,7 @@
     /* Reduce navbar padding */
 
     .navbar{
+<<<<<<< HEAD
 
         padding:12px 20px;
 
@@ -331,3 +368,43 @@
     }
 
 }
+=======
+
+        padding:12px 20px;
+
+    }
+
+    /* Smaller logo */
+
+    .logo{
+
+        font-size:28px;
+
+    }
+
+    /* Reduce spacing between links */
+
+    .nav-links{
+
+        gap:16px;
+
+    }
+
+    /* Smaller navigation text */
+
+    .nav-links span{
+
+        font-size:15px;
+
+    }
+
+    /* Smaller buttons */
+
+    .logout-btn{
+
+        padding:8px 14px;
+
+    }
+
+}
+>>>>>>> 2592bf7 (update moviecard and movierow)

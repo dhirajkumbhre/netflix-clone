@@ -1,38 +1,182 @@
+/* ==========================================================
+   Movie Row
+   ----------------------------------------------------------
+   Displays a horizontal row of movie thumbnails.
+   Each row can be scrolled horizontally.
+========================================================== */
+
 .movie-row {
-  margin: 40px 0;
+
+    margin: 50px 0;
+
+    padding: 0 50px;
+
 }
+
+
+/* ==========================================================
+   Section Title
+========================================================== */
 
 .movie-row h2 {
-  color: white;
-  margin-left: 30px;
-  margin-bottom: 20px;
-  font-size: 28px;
+
+    color: #ffffff;
+
+    font-size: 1.8rem;
+
+    font-weight: 700;
+
+    margin: 0 0 18px;
+
 }
 
+
+/* ==========================================================
+   Movie List
+   ----------------------------------------------------------
+   Horizontal scroll container for movie cards.
+========================================================== */
+
 .movie-list {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding: 0 30px 10px;
-  scroll-behavior: smooth;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding-bottom: 15px;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+
 }
 
 .movie-list::-webkit-scrollbar {
-  display: none;
+
+    display: none;
+
 }
+
+
+/* ==========================================================
+   Movie Card
+   ----------------------------------------------------------
+   Individual movie thumbnail.
+========================================================== */
 
 .movie-card {
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
+
+    flex: 0 0 auto;
+
+    width: 240px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transform: translateZ(0);
+
+    backface-visibility: hidden;
+
+
+
+    transition:
+        transform 0.28s ease,
+
 }
 
-.movie-card:hover {
-  transform: scale(1.08);
-}
+
+/* ==========================================================
+   Movie Poster
+========================================================== */
 
 .movie-card img {
-  width: 180px;
-  border-radius: 8px;
-  cursor: pointer;
-  display: block;
+
+    width: 100%;
+
+    aspect-ratio: 2 / 3;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 8px;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,.45);
+
+    transition:
+        transform .28s ease,
+        filter .28s ease,
+        box-shadow .28s ease;
+
+}
+
+
+/* ==========================================================
+   Hover Effect
+   ----------------------------------------------------------
+   Slight zoom animation similar to Netflix.
+========================================================== */
+
+.movie-card:hover {
+
+    transform: scale(1.08);
+
+    z-index: 20;
+
+}
+
+.movie-card:hover img {
+
+    filter: brightness(1.08);
+
+    box-shadow: 0 18px 40px rgba(0,0,0,.7);
+
+}
+
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width:768px){
+
+    .movie-row{
+
+        padding: 0 20px;
+
+    }
+
+    .movie-row h2{
+
+        font-size: 1.4rem;
+
+        margin-bottom: 14px;
+
+    }
+
+    .movie-list{
+
+        gap: 8px;
+
+    }
+
+    .movie-card{
+
+        width: 170px;
+
+    }
+
 }
